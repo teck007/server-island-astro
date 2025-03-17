@@ -1,0 +1,14 @@
+---
+import Repos from "../components/Repos.astro";
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+
+export const prerender = true;
+---
+
+<Layout >
+	<Welcome />
+	<Repos server:defer>
+		<span slot="fallback" class="text-xs text-gray-400">cargando...</span>
+	</Repos>
+</Layout>
